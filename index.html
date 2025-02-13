@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vineet Joshi - Portfolio</title>
+    <link rel="stylesheet" href="vineet2.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h1 id="dynamicText">Vineet Joshi</h1>
+        <p>Aspiring Python Developer & Data Analyst</p>
+        <button onclick="location.href='#contact'">Hire Me</button>
+        <button onclick="location.href='#projects'">View Projects</button>
+    </section>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a passionate Python developer with a strong foundation in data analytics. Currently pursuing a BCA, I am eager to apply my coding and analytical skills in real-world scenarios. I have a keen interest in solving problems and developing innovative solutions using technology.</p>
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Python Programming</li>
+            <li>Data Analytics (Excel, SQL)</li>
+            <li>Web Development (HTML, CSS, JavaScript)</li>
+            <li>Problem-Solving</li>
+        </ul>
+    </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Sales Data Analysis using Excel</h3>
+            <p>Developed an interactive dashboard for analyzing sales trends, using pivot tables and Excel formulas.</p>
+            <button onclick="location.href='project1-details.html'">Learn More</button>
+        </div>
+        <div class="project">
+            <h3>Python Automation Scripts</h3>
+            <p>Created automation scripts for data cleaning and report generation using Python.</p>
+            <button onclick="location.href='project2-details.html'">Learn More</button>
+        </div>
+    </section>
+    
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <ul>
+            <li>Programming with Python</li>
+            <li>Excel Data Analytics</li>
+            <li>Python Programming</li>
+        </ul>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: vineetjoshi@email.com</p>
+        <p>LinkedIn: linkedin.com/in/vineetjoshi</p>
+        <p>Phone: +91 7668164318</p>
+        <button onclick="location.href='mailto:vineetjoshi@email.com'">Email Me</button>
+        <button onclick="location.href='https://linkedin.com/in/vineetjoshi'">Connect on LinkedIn</button>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Vineet Joshi. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        let words = ["Python Developer", "Data Analyst", "Problem Solver"];
+        let index = 0;
+        function changeText() {
+            document.getElementById("dynamicText").textContent = "Vineet Joshi - " + words[index];
+            index = (index + 1) % words.length;
+        }
+        setInterval(changeText, 3000);
+    </script>
+    <script src="vineet.js"></script>
+</body>
+</html>
